@@ -6,7 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class BookSelectTest {
+public class BookSelectAllTest {
 
 	public static void main(String[] args) {
 		
@@ -28,7 +28,7 @@ public class BookSelectTest {
 
 					// 2. Connection 얻어오기
 					String url = "jdbc:oracle:thin:@localhost:1521:xe";
-					conn = DriverManager.getConnection(url, "webdb", "webdb");
+					conn = DriverManager.getConnection(url, "webdb", "1234");
 					System.out.println("접속성공");
 
 					// 3. SQL문 준비 / 바인딩 / 실행
