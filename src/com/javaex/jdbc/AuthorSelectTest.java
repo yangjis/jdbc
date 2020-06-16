@@ -21,14 +21,14 @@ public class AuthorSelectTest {
 			String url = "jdbc:oracle:thin:@localhost:1521:xe";
 			conn = DriverManager.getConnection(url,"webdb","1234");
 		    // 3. SQL문 준비 / 바인딩 / 실행
-		    String quary ="";
-		    quary += "select author_id,";
-		    quary += "		 author_name,";
-		    quary += "		 author_desc ";
-		    quary += " from author";
+		    String query ="";
+		    query += "select author_id,";
+		    query += "		 author_name,";
+		    query += "		 author_desc ";
+		    query += " from author";
 		    
-		    pstmt = conn.prepareStatement(quary);
-		    rs = pstmt.executeQuery(quary);
+		    pstmt = conn.prepareStatement(query);
+		    rs = pstmt.executeQuery(query);
 		    // 4.결과처리
 		    while(rs.next()) {
 		    	int authorId = rs.getInt("author_id");

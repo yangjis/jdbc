@@ -27,9 +27,9 @@ public class AuthorUpdate {
 			String url = "jdbc:oracle:thin:@localhost:1521:xe";
 			conn = DriverManager.getConnection(url,"webdb","1234");
 		    // 3. SQL문 준비 / 바인딩 / 실행
-		    String quary = "update author set author_desc = ? where author_id= ?";
+		    String query = "update author set author_desc = ? where author_id= ?";
 
-		    pstmt = conn.prepareStatement(quary);
+		    pstmt = conn.prepareStatement(query);
 		    
 		    pstmt.setString(1,"서울특별시");
 		    pstmt.setInt(2, 5);

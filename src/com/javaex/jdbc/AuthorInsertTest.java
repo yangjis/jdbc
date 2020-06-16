@@ -31,8 +31,8 @@ public class AuthorInsertTest {
 			String url = "jdbc:oracle:thin:@localhost:1521:xe";
 			conn = DriverManager.getConnection(url,"webdb","1234");
 		    // 3. SQL문 준비 / 바인딩 / 실행
-			String quary = "insert into author values(seq_author_id.nextval, ?, ?)";//쿼리문 문자열만들기. ?주의
-			pstmt = conn.prepareStatement(quary);//쿼리로 만들기
+			String query = "insert into author values(seq_author_id.nextval, ?, ?)";//쿼리문 문자열만들기. ?주의
+			pstmt = conn.prepareStatement(query);//쿼리로 만들기
 			
 			pstmt.setString(1,"강풀");
 			pstmt.setString(2, "온라인 만화가 1세대");
