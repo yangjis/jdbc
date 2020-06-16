@@ -3,13 +3,13 @@ package com.javaex.jdbc;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class AuthorDelete {
+public class AuthorUpdateTest {
 
 	public static void main(String[] args) {
-		
-				//0. import java.sql.*;
+		//0. import java.sql.*;
 				//1. JDBC 드라이버 (Oracle) 로딩
 				//2. Connection 얻어오기
 				//3. SQL문 준비 / 바인딩 / 실행
@@ -26,12 +26,13 @@ public class AuthorDelete {
 			// 2. Connection 얻어오기(ip, portNomber, id, pw)
 			String url = "jdbc:oracle:thin:@localhost:1521:xe";
 			conn = DriverManager.getConnection(url,"webdb","1234");
-		    // 3. SQL문 준비 / 바인딩 / 실행	
-		    String query = "delete from author where author_id = ?";
-		
+		    // 3. SQL문 준비 / 바인딩 / 실행
+		    String query = "update author set author_desc = ? where author_id= ?";
+
 		    pstmt = conn.prepareStatement(query);
 		    
-		    pstmt.setInt(1,4);
+		    pstmt.setString(1,"서울특별시");
+		    pstmt.setInt(2, 5);
 		    int count = pstmt.executeUpdate();
 		    
 		    System.out.println(count + "건이 처리되었습니다.");
@@ -45,20 +46,18 @@ public class AuthorDelete {
 		
 		
 		// 5. 자원정리
-		try {
-		                  
-		    if (pstmt != null) {
-		        pstmt.close();
-		    }
-		    if (conn != null) {
-		        conn.close();
-		    }
-		} catch (SQLException e) {
-		    System.out.println("error:" + e);
-		}
-		
-		}
+	    try {
+	                      
+	        if (pstmt != null) {
+	            pstmt.close();
+	        }
+	        if (conn != null) {
+	            conn.close();
+	        }
+	    } catch (SQLException e) {
+	        System.out.println("error:" + e);
+	    }
 
-
+	}
 	}
 }
