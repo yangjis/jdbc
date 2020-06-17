@@ -19,8 +19,7 @@ public class AuthorDAO {
 	private PreparedStatement pstmt = null;
 	private ResultSet rs = null;
 
-	public AuthorDAO() {
-	}
+	public AuthorDAO() {}
 
 	private void getConnect() {
 
