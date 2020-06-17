@@ -31,6 +31,7 @@ public class AuthorApp {
 		}
 		
 		authorList = authorDao.select();
+		System.out.println("=============select================");
 		for(AuthorVO vo: authorList) {
 			System.out.println(vo.getAuthor_id() + ", " + vo.getAuthor_name() + ", " + vo.getAuthor_desc());
 		}
