@@ -35,8 +35,7 @@ public class AuthorDAO {
 			int count = pstmt.executeUpdate(); // insert, update, delete를 사용할때 사용
 
 			// 4.결과처리
-			authorList.removeAll(authorList);
-			authorList = select();
+			select();
 			System.out.println(count + "건 입력되었습니다.");
 
 		} catch (ClassNotFoundException e) {
@@ -83,9 +82,7 @@ public class AuthorDAO {
 			pstmt.setInt(3, vo.getAuthor_id());
 			int count = pstmt.executeUpdate();
 			
-			authorList.removeAll(authorList);
-			authorList = select();
-			
+			select();
 			System.out.println(count + "건이 수정되었습니다.");
 
 		} catch (ClassNotFoundException e) {
@@ -128,8 +125,7 @@ public class AuthorDAO {
 			pstmt.setInt(1, author_id);
 			int count = pstmt.executeUpdate();
 			
-			authorList.removeAll(authorList);
-			authorList = select();
+			select();
 			System.out.println(count + "건이 삭제되었습니다.");
 
 		} catch (ClassNotFoundException e) {
