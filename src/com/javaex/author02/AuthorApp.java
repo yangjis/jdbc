@@ -7,13 +7,15 @@ public class AuthorApp {
 
 	public static void main(String[] args) {
 		
-		AuthorDAO authorDao = new AuthorDAO();
+		List<AuthorVO> authorList = new ArrayList<AuthorVO>();
 		
+		AuthorDAO authorDao = new AuthorDAO();
 		AuthorVO authorVo = new AuthorVO("이문열", "경북 영양");
-		List<AuthorVO> authorList = new ArrayList<AuthorVO>(); 
 				
 		authorDao.insert(authorVo);
 		
+		AuthorVO vo2 = new AuthorVO(2, "박경리", "경상남도 통영");
+		authorDao.insert(vo2);
 		
 		AuthorVO authorVo3 = new AuthorVO(2, "수정 박경리", "수정 경상남도 통영");
 		authorDao.update(authorVo3);
