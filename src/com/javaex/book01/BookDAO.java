@@ -35,7 +35,7 @@ public class BookDAO {
 			query += "        au.author_name, ";
 			query += "        au.author_desc ";
 			query += " from book bo, author au ";
-			query += " where bo.author_id = au.author_id ";
+			query += " where bo.author_id(+) = au.author_id ";
 
 			pstmt = conn.prepareStatement(query); // 쿼리로 만들기
 
